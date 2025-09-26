@@ -22,9 +22,6 @@ class PemesananModel extends Model
         $builder = $this->db->table($this->table . ' p');
         $builder->select('p.id_pemesanan, p.tanggal_pesan, p.total, p.id_pelanggan');
 
-        // === Kalau kamu punya tabel pelanggan dengan kolom nama, AKTIFKAN baris di bawah dan sesuaikan kolomnya ===
-        // $builder->select('pl.nama_pelanggan AS nama_pelanggan'); // atau 'pl.nama AS nama_pelanggan'
-        // $builder->join('pelanggan pl', 'pl.id_pelanggan = p.id_pelanggan', 'left');
 
         if ($start && $end) {
             $builder->where('p.tanggal_pesan >=', $start)

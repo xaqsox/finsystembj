@@ -17,7 +17,7 @@ class Profile extends BaseController
 
     public function index()
     {
-        $idRole = session()->get('id_role'); // Ambil dari session login
+        $idRole = session()->get('id_role');
         $pelanggan = $this->pelangganModel->where('id_role', $idRole)->first();
         $login = $this->loginRoleModel->find($idRole);
 
